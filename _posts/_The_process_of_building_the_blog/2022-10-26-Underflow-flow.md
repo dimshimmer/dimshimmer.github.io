@@ -115,6 +115,17 @@ ps：静态网页和动态网页
 | `permalink` | 如果你需要让你发布的博客的 URL 地址不同于默认值 `/year/month/day/title.html`，那你就设置这个变量，然后变量值就会作为最终的 URL 地址。 |
 | `published` | 如果你不想在站点生成后展示某篇特定的博文，那么就设置（该博文的）该变量为 false。 |
 
+#### Contents
+
+创建文章的目录
+
+在引用一些图片和其它的资源时，可以在工程的根目录下创建一个文件夹，将下载好的图片或其它资源放到该文件夹中，使用`site.url`变量来引用：
+
+```markdown
+the picture followed:
+![picture]({{ site.url }}/assets/screenshot.jpg)
+```
+
 
 
 小实验
