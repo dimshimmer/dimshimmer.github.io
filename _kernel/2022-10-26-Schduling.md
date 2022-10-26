@@ -2,7 +2,7 @@
 layout: post
 title: "Scheduling"
 date: 2022-10-26 10:16:00+0800
-categories: The process of learning the kernel of Linux
+lesson: Scheduling
 ---
 
 # Scheduling

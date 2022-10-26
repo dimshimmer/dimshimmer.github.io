@@ -2,7 +2,7 @@
 layout: post
 title: "Underflow flow"
 date: 2022-10-26 09:40:00+0800
-categories: The_process_of_building_the_blog
+level: level_0
 ---
 
 # The blog
@@ -102,6 +102,30 @@ ps：静态网页和动态网页
 |                  |                                                              |
 
 先跳过这些比较繁琐的概念，从比较重要的博客部分开始看起，以上的详细部分，在遇到了有关的问题之后，再深入学习
+
+#### Liquid
+
+**Logically control**
+
+因为该模板语言，与`Jekyll`已基本绑定，在该工程中，几乎全部用到了该语言，做有关的处理
+
+代码本身支持两种标签类型：
+
+- `{{ content }}`输出内容到页面
+
+- `{% if condition == true %}`控制逻辑
+
+  `{% endif%}`
+
+每个逻辑控制的代码块结束后，必须跟一个表示结束的声明
+
+**Filter**
+
+基本语法：`{{"内容" | keyword}}`
+
+- `{{ "uppercase" | upcase }}` = UPPERCASE
+
+
 
 ### Blog
 

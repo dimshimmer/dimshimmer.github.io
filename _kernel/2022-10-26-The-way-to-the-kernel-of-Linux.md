@@ -2,7 +2,7 @@
 layout: post
 title: "The way to the kernel of Linux"
 date: 2022-10-26 09:50:00+0800
-categories: The_process_of_learning_the_kernel_of_Linux
+lesson: Beginning
 ---
 
 # The notes

@@ -1,0 +1,13 @@
+---
+layout: full
+title: budling of the blog
+permalink: /dimshimmer.github.io/building
+---
+
+{% for level in site.building%}
+    <h2>
+        <a href="{{level.url}}">
+            {{ level.title }}
+        </a>
+    </h2>
+{% endfor %}
