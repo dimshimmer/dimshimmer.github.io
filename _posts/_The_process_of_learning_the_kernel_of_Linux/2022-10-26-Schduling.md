@@ -37,3 +37,23 @@ categories: The process of learning the kernel of Linux
 #5: NEW -> READY
 
 目前的调度都是抢占式的
+
+常见的调度算法：
+
+- First come, First Served
+
+  Convoy effect:“押镖”
+
+- Shortest Job First
+
+  ```
+  p1 = 15
+  p2 = 2
+  p3 = 6
+  p4 = 0
+  ave = 8.25
+  ```
+
+- Round-Robin
+
+  
