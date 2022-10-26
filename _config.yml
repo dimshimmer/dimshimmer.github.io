@@ -32,7 +32,8 @@ github_username:  dimshimmer
 
 # Build settings
 theme: minima
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-feed
 permalink: /:year-:month-:day-:title
 paginate: 12
 paginate_path: "/page/:num/"
