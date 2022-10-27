@@ -34,6 +34,7 @@ github_username:  dimshimmer
 plugins: 
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
+  - jemoji
 permalink: /:year-:month-:day-:title
 paginate: 12
 paginate_path: "/page/:num/"
@@ -51,9 +52,10 @@ collections:
     url: /building
   kernel:
     name: kernel
-    output: true 
+    output: true
     sort_by: lesson
     url: /kernel
+
 comments :
   gitalk :
     clientID : xxx

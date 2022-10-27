@@ -17,7 +17,7 @@ lesson: Scheduling
 
   绝大部分需要等待 I/O
 
-  许多都要等待CPU释放
+  很少的CPU发生
 
 - CPU-bound
 
@@ -32,7 +32,7 @@ lesson: Scheduling
 
 #1: RUNNING -> WAITING
 
-#2: RUNNING -> READY
+#2: RUNNING -> READY(在non-preemptive中不可能发生)
 
 #3: WAITING -> READY
 
@@ -42,6 +42,14 @@ lesson: Scheduling
 
 目前的调度都是抢占式的
 
+调度的目标：
+
+- CPU使用率
+- 提高吞吐量
+- 减少轮询时间
+- 减少等待时间
+- 减少响应时间
+
 常见的调度算法：
 
 - First come, First Served
@@ -50,14 +58,25 @@ lesson: Scheduling
 
 - Shortest Job First
 
-  ```
-  p1 = 15
-  p2 = 2
-  p3 = 6
-  p4 = 0
-  ave = 8.25
-  ```
-
+  - Non-preemptive
+  - Preemptive
+  
+  局限：在实际的情况下，基本是不知道要运行多长时间的
+  
 - Round-Robin
 
-  
+- Priority 
+
+- Multilevel Queue
+
+  有多个不同级别优先级的队列
+
+  CPU分配到不同队列上的时间不同
+
+- Multilevel Feedback Queue 
+
+  进程可以在不同级别的队列之间移动
+
+
+
+

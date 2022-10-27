@@ -34,3 +34,5 @@ gem "webrick", "~> 1.7"
 gem "jekyll-paginate", "~> 1.1"
 
 gem "paginate", "~> 4.0"
+
+gem 'jemoji'
