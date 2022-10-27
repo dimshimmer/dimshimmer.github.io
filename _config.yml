@@ -42,13 +42,18 @@ highlighter: rouge
 markdown: kramdown
 collections_dir: my_collection
 
+list_title: Boom
 collections:
   building:
+    name: building
     output: true
     sort_by: level
+    url: /building
   kernel:
+    name: kernel
     output: true 
     sort_by: lesson
+    url: /kernel
 comments :
   gitalk :
     clientID : xxx
