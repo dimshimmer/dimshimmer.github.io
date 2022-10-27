@@ -32,9 +32,9 @@ github_username:  dimshimmer
 
 # Build settings
 theme: minima
-plugins: [jekyll-paginate]
-  # - jekyll-feed
-  # - 
+plugins: 
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-paginate
 permalink: /:year-:month-:day-:title
 paginate: 12
 paginate_path: "/page/:num/"
@@ -47,7 +47,6 @@ collections:
   building:
     output: true
     sort_by: level
-collections:
   kernel:
     output: true 
     sort_by: lesson

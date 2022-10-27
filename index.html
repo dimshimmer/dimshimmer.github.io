@@ -3,9 +3,9 @@ layout: default
 ---
 
 <div class="main-content index-page clearfix">
-    <!-- <div class="post-lists">
+    <div class="post-lists">
         <div class="post-lists-body">
-            {% for post in site.collections_dir %}
+            {% for post in site.collections %}
             <div class="post-list-item">
                 <div class="post-list-item-container">
                     <div class="item-thumb bg-deepgrey" style="background-image:url({% if post.thumbnail %}{{ post.thumbnail }}{% else %}{{ '/style/image/thumbnail.png' | prepend: site.baseurl }}{% endif %});"></div>
@@ -32,10 +32,10 @@ layout: default
             </div>
             {% endfor %}
         </div>
-    </div> -->
+    </div>
 
 
-    <!-- {% if paginator.total_pages > 1 %}
+    {% if paginator.total_pages > 1 %}
     <div class="lists-navigator clearfix">
         <ol class="page-navigator">
             {% if paginator.previous_page %}
@@ -52,6 +52,6 @@ layout: default
             {% endif %}
         </ol>
     </div>
-    {% endif %} -->
+    {% endif %}
 
 </div>

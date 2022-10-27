@@ -1,12 +1,12 @@
 ---
 layout: default
-title: budling of the blog
-permalink: /dimshimmer.github.io/kernel
+title: fetching the kernel
+permalink: /kernel
 ---
 
-{% for level in site.kernel%}
+{% for lesson in site.kernel%}
     <h2>
-        <a href="{{level.url}}">
+        <a href="{{lesson.url}}">
             {{ lesson.title }}
         </a>
     </h2>
