@@ -31,7 +31,6 @@ twitter_username: dimshimmer
 github_username:  dimshimmer
 
 # Build settings
-theme: minima
 plugins: 
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
   - jekyll-paginate
