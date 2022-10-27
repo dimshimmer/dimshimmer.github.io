@@ -48,12 +48,12 @@ collections:
   building:
     name: building
     output: true
-    sort_by: level
+    sort_by: chap
     url: /building
   kernel:
     name: kernel
     output: true
-    sort_by: lesson
+    sort_by: chap
     url: /kernel
 
 comments :

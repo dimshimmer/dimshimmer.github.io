@@ -1,13 +1,24 @@
 ---
 layout: default
-title: fetching the kernel
+title: kernel
 permalink: /kernel
+var: kernel
 ---
+<h2 class="post-list-heading">{{ page.title | default: "kernel" }}</h2>
+<ul class="post-list">
+    {% for chap in site.kernel%}
+    <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ chap.date | date: date_format }}</span>
+        <h3>
+            <a href="{{chap.url}}">
+                {{ chap.title }}
+            </a>
+        </h3>
+    </li>
+    {% endfor %}
+</ul>
+   
 
-{% for lesson in site.kernel%}
-    <h2>
-        <a href="{{lesson.url}}">
-            {{ lesson.title }}
-        </a>
-    </h2>
-{% endfor %}
+    
+
