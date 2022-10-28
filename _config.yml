@@ -55,7 +55,11 @@ collections:
     output: true
     sort_by: chap
     url: /kernel
-
+  CTF:
+    name: CTF
+    ouput: true
+    sort_by: chap
+    url: /CTF
 comments :
   gitalk :
     clientID : xxx

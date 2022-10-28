@@ -5,10 +5,6 @@ date: 2022-10-26 10:16:00+0800
 chap: Scheduling
 ---
 
-* TOC
-{:toc}
-
-
 # Scheduling
 
 大多数的进程都要切换在`CPU`和`IO`之间，其中的速度限制分为:
@@ -76,7 +72,6 @@ chap: Scheduling
 - Multilevel Feedback Queue 
 
   进程可以在不同级别的队列之间移动
-
 
 
 

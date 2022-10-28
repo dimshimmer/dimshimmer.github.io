@@ -5,19 +5,22 @@ date: 2022-10-26 09:40:00+0800
 chap: level_0
 ---
 
-* TOC
-{:toc}
-
-
 # The blog
 
 这篇博客会记录这个小破博客的搭建过程，和这个过程中，小菜鸡的成长过程。不知道能更新多久呢~:smirk:
 
-
-
-## First thing first
+## Tools
 
 首先要学习使用搭建的工具及其内在联系，理清楚其中的工作结构，把大致的框架梳理明白，再深入学习，来一步步完善和巩固
+
+`gitpage`支持Jekyll实在太棒了，在本地将配置文件和博客文件写好后，就可以直接上传到`github`仓库中，在远端下按照配置文件，选择对应的版本和依赖，就可以自动生成静态网页的文件夹(所以一般将Jekyll在本地生成的`_site`放到`.gitignore`中，让在远端自动部署)，一般工作流程：
+
+```assembly
+本地写好配置文件、博文 -- git --> 源文件推送到远端 -- git page提供的引擎和域名 --> 编译、部署网页
+    |
+    |
+    |--------> 本地使用Jekyll生成网页文件夹(可以实时修改观察效果)
+```
 
 ### Git Page
 这一部分比较简单，其实只是GitHub上的一个仓库，可以被用来部署静态网页，随着代码的更新来自动重新部署，并且有一个免费的域名
@@ -38,13 +41,22 @@ ps：静态网页和动态网页
 
 首先，`jekyll`是一个简单的博客形态的静态站点生产机器，有一个模板目录，通过比如`markdown`的转换器和`Liquid`渲染器转化成一个完整的可发布的静态网站
 
-加入模板后的目录结构以及文件是：
+`Jekyll`为`html`的生成提供了导入模板的机会，使用`include,layout和front-master`，完成对待实现页面的参数的设置，以及和其它模板页面的继承、包含关系，如：
 
+```assembly
+#---
+在两行三横线中
+设置参数
+#---
+{#% include的内容 #%}
+{#{想要插入的内容}#}
+```
 
-
-先跳过这些比较繁琐的概念，从比较重要的博客部分开始看起，以上的详细部分，在遇到了有关的问题之后，再深入学习
+(防止引擎识别`front master和{}`的标志，使用`#`隔开)
 
 #### Liquid
+
+`Liquid`
 
 **Logically control**
 
@@ -65,8 +77,6 @@ ps：静态网页和动态网页
 基本语法：`{{"内容" | keyword}}`
 
 - `{{ "uppercase" | upcase }}` = UPPERCASE
-
-
 
 ### Blog
 
@@ -91,9 +101,7 @@ the picture followed:
 ![picture]({{ site.url }}/assets/screenshot.jpg)
 ```
 
-
-
-小实验
+代码高亮的小实验
 
 ```c
 char*p = (char*)& anything;
@@ -101,13 +109,72 @@ int i = 5;
 while(i--) tranverse_the_byte(p[i]);
 ```
 
+## Construction
 
+首先要安装`ruby`，对应的包管理文件`gem`，依赖管理工具`bundler`和`jekyll`
 
-## Second thing second
+- `Ruby`官网下载安装`Ruby`:
 
-### Arrange the Structure of the blogs
+  [Ruby官网](https://rubyinstaller.org/downloads/)
 
+  使用对应操作系统的安装包即可
 
+  Windows下安装，最后会提示配置`MSYS2`的内容，为便于使用，安装全部的`tool chain`即可
 
-### Support MarkDown Randering
+- 安装`gem`：
+
+  [RubyGem官网下载](https://rubygems.org/pages/download)
+
+  将下载好的压缩包文件解压，在解压出的文件夹下 ，使用`shell`或命令行执行：
+
+  ```shell
+  $ ruby setup.rb
+  ```
+
+  安装`gem`
+
+- 使用`gem`安装`bundler`和`jekyll`
+
+  执行命令：
+
+  ```shell
+  $ gem install bundler
+  $ gem install jekyll -v 3.8.5
+  ```
+
+  虽然`jekyll`的版已经更新到了`4.0`以上，但实际使用起来，会在依赖上出现很多问题，而`jekyll 3.8.5`是非常稳定的版本，在实际使用出现了依赖的问题时，也卸载了原来的`4.3.1`，重新安装了`3.8.5`:
+
+  ```shell
+  $ gem uninstall jekyll -v 4.3.1
+  ```
+
+  安装好以后，就可以使用`jekyll`，在本地自动生成一些默认的基础配置文件
+
+  下一步就需要理解其中的语法，慢慢调整其中的语法，来调整文件结构，最后达到调整网站结构的效果
+
+  目前已经实现的是：
+
+  搭建好了基本的框架：博文分类，页面跳转
+
+  博文内部：显示目录结构，创建时间
+
+## Next Step
+
+目前在博客里想要记录的内容主要有三个部分：
+
+- 搭建博客网站的过程
+- 结合`Linux kernel`的源码，学习操作系统的笔记
+- CTF的学习过程
+
+下一步的工作：
+
+- 修改模板文件，为创建不同的`collection`，提供统一的模板
+- 为文章添加摘要，显示在对应类型文章索引的标题旁边
+- 添加作者信息，显示不同内容的贡献作者和引用来源
+- 将文章目录从头部固定，变为悬浮到文章左侧
+- 修改网页模板中的图标
+
+**To be continued~**
+
+:smiley:
 
