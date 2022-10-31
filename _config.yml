@@ -49,17 +49,20 @@ collections:
     name: building
     output: true
     sort_by: chap
-    url: /building
+    url: /building/
+    relative_directory: /building
   kernel:
     name: kernel
     output: true
     sort_by: chap
-    url: /kernel
-  CTF:
-    name: CTF
-    ouput: true
+    url: /kernel/
+    relative_directory: /kernel
+  ctf:
+    name: ctf
+    output: true
     sort_by: chap
-    url: /CTF
+    url: /ctf/
+    relative_directory: /ctf
 comments :
   gitalk :
     clientID : xxx
