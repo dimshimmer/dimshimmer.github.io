@@ -6,7 +6,7 @@ var: CTF
 ---
 <h2 class="post-list-heading">{{ page.title | default: "CTF" }}</h2>
 <ul class="post-list">
-    {% for chap in site.ctf%}
+    {% for chap in site.CTF%}
     <li>
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         <span class="post-meta">{{ chap.date | date: date_format }}</span>
@@ -14,6 +14,7 @@ var: CTF
             <a href="{{chap.url}}">
                 {{ chap.title }}
             </a>
+
         </h3>
     </li>
     {% endfor %}

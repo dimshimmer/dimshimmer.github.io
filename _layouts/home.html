@@ -10,16 +10,19 @@ layout: default
   {{ content }}
 
   {%- if site.collections.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Blogs" }}</h2>
     <ul class="post-list">
       {%- for collection in site.collections -%}
+      {%- if collection.name -%}
       <li>
         <h3>
           <a class="post-link" href="{{ collection.url | relative_url }}">
             {{ collection.name | escape }}
           </a>
+          
         </h3>
       </li>
+      {%- endif -%}
       {%- endfor -%}
     </ul>
 

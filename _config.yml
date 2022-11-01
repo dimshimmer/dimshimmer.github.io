@@ -46,19 +46,19 @@ collections_dir: my_collection
 list_title: Boom
 collections:
   building:
-    name: building
+    name: Building
     output: true
     sort_by: chap
     url: /building/
     relative_directory: /building
   kernel:
-    name: kernel
+    name: Kernel
     output: true
     sort_by: chap
     url: /kernel/
     relative_directory: /kernel
-  ctf:
-    name: ctf
+  CTF:
+    name: CTF
     output: true
     sort_by: chap
     url: /ctf/
