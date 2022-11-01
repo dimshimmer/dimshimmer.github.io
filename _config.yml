@@ -50,19 +50,19 @@ collections:
     output: true
     sort_by: chap
     url: /building/
-    relative_directory: /building
+    description: "The process and the tutorial of building the blog website"
   kernel:
     name: Kernel
     output: true
     sort_by: chap
     url: /kernel/
-    relative_directory: /kernel
+    description: "Learning the kernel of Linux under the course: os"
   CTF:
     name: CTF
     output: true
     sort_by: chap
     url: /ctf/
-    relative_directory: /ctf
+    description: "Journey to a CTFer"
 comments :
   gitalk :
     clientID : xxx
