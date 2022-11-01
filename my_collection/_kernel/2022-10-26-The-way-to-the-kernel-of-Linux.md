@@ -5,7 +5,7 @@ date: 2022-10-26 09:50:00+0800
 chap: Beginning
 ---
 
-# The notes
+# The notes🌏
 
 学习操作系统的笔记，探究`Linux`的内核
 

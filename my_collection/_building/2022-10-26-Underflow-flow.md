@@ -5,9 +5,9 @@ date: 2022-10-26 09:40:00+0800
 chap: level_0
 ---
 
-# The blog
+# The blog🏡
 
-这篇博客会记录这个小破博客的搭建过程，和这个过程中，小菜鸡的成长过程。不知道能更新多久呢~:smirk:
+这篇博客会记录这个小破博客的搭建过程，和这个过程中，小菜鸡的成长过程。不知道能更新多久呢~
 
 ## Tools
 
@@ -176,5 +176,5 @@ while(i--) tranverse_the_byte(p[i]);
 
 **To be continued~**
 
-:smiley:
+
 
