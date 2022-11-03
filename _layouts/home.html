@@ -13,8 +13,7 @@ layout: default
     <h2 class="post-list-heading">{{ page.list_title | default: "Blogs" }}</h2>
     <ul class="post-list">
       {%- for collection in site.collections -%}
-      {%- if collection.name -%}
-      {%- if collection.name != x1a0_h0n9%}
+      {%- if collection.name and collection.name != 'x1a0_h0n9' -%}
       
       <li>
         <h3>
@@ -27,7 +26,6 @@ layout: default
           
         </h3>
       </li>
-      {%- endif -%}
       {%- endif -%}
       {%- endfor -%}
     </ul>
