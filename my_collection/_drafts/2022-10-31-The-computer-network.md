@@ -2,7 +2,7 @@
 layout: post
 title: "The computer network"
 date: 2022-10-31 20:20:00+0800
-chap: One_File
+chap: One_File_Network
 ---
 
 # README

@@ -63,6 +63,12 @@ collections:
     sort_by: chap
     url: /ctf/
     description: "Journey to a CTFer"
+  xiaohong:
+    name: x1a0_h0n9
+    output: true
+    sort_by: chap
+    url: /xiaohong
+    description: "Diary"
 comments :
   gitalk :
     clientID : xxx

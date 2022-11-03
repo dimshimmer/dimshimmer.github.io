@@ -73,5 +73,36 @@ chap: Scheduling
 
   进程可以在不同级别的队列之间移动
 
+不同系统下的`scheduling`:
+
+- Win XP Scheduling
+
+  不同的优先级，数字越大的，优先级越高
+
+- Linux
+
+  数越小，优先级越高
+
+  `nice`越大，`priority`越大：`pri(new) = pri(old) + nice`
+
+```c
+while (1) {
+		c = -1;
+		next = 0;
+		i = NR_TASKS;
+		p = &task[NR_TASKS];
+		while (--i) {
+			if (!*--p)
+				continue;
+			if ((*p)->state == TASK_RUNNING && (*p)->counter > c)
+				c = (*p)->counter, next = i;
+		}
+		if (c) break;
+		for(p = &LAST_TASK ; p > &FIRST_TASK ; --p)
+			if (*p) (*p)->counter = ((*p)->counter >> 1) +(*p)->priority;
+}
+switch_to(next);
+```
+
 
 
