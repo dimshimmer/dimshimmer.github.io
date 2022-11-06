@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default_post
 ---
 
 <article class="main-content page-page" itemscope itemtype="http://schema.org/Article">
@@ -14,15 +14,13 @@ layout: default
 </article>
 <div class="main-container">
     <div class="post-container">
-        <!-- <div class="navigation" id="navigation" >
+        <div class="navigation" id="navigation" >
             <h1>Contents</h1>
-            <ul class="nav sidenav"></ul>
-        </div> -->
-        <article class="post-content">
             {% include toc.html html=content %}
-            {{ content }}
-        </article>
+            <ul class="nav sidenav"></ul>
+        </div>
         <div class="post-content">
+         {{ content }}
          {% include comment.html %}
         </div>
     </div>
