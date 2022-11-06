@@ -455,3 +455,28 @@ __libc_malloc (size_t bytes)
 ```
 
 因为`free`函数只接受一个指针，并且`system`函数也只接受一个指针参数，所以攻击`__free_hook`是最稳定的
+
+常见的利用点：
+
+- `heap overflow`
+
+  使用溢出的方式，修改其它可能已经释放的堆块的值，以此来申请
+
+- `UAF`
+
+  一般使用该方法来进行信息泄露，打印一个`unsorted bin chunk`的`fd`指针，由此就可以拿到`malloc_state`的地址，其相对于`libc`基地址的偏移是固定的
+
+- `double free`
+
+  一种特殊的`UAF`，针对同一指针进行多次释放，使堆块发生重叠
+
+  ```c
+  typedef struct tcache_entry
+  {
+      struct tcache_entry*next;
+  /* This field exists to detect double frees. */
+      struct tcache_perthread_struct*key;
+  } tcache_entry;
+  ```
+
+- `Unlink Attack`
