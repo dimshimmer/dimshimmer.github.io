@@ -480,3 +480,33 @@ __libc_malloc (size_t bytes)
   ```
 
 - `Unlink Attack`
+
+## EX(wiki)
+
+### UAF
+
+#### hacknote
+
+常规的菜单题，但关闭了`pie`，并且其中有后门函数`magic`，所以可以利用该地址，劫持函数指针，调用`system`函数；因为该题不清空链表中的内容，所以可以利用相同索引下的地址，再次调用函数指针
+
+`exp`的基本思路是：先创建`0x10=>(对齐到)0x20`的结构体，再申请`0x20=>0x30`的部分，存放字符串内容，再做同样的操作，这样在`free`时，就可以在`fast bin`中生成`0x20`的`bin`链表，并且第二个`chunk`的地址与`note[0]`相同，所以只需要再创建一个`0x10 => 0x20`的结构体，和`0x08 => 0x20`的内容块，就可以修改`put`函数指针为`magic`
+
+```assembly
+chunk 1: struct 1[put1, context1] 16 [0]
+chunk 2: context1 32
+chunk 3: struct 2[put2, context2] 16 [1]
+chunk 4: context2 32
+free 1
+free 2
+free 3
+free 4
+==> 
+fastbinY[0] -> chunk3 -> chunk1
+fastbinY[1] -> chunk4 -> chunk2
+
+chunk 3: struct 3[put3, context3] [2]
+chunk 1: context3 magic 
+show 0
+```
+
+#### prac(Author: PIG-007)
