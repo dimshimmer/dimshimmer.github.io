@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Heap at High Level Libc"
+title: "Heap at High Level Libc🎩"
 date: 2022-10-28 10:45:00+0800
 chap: level_1
 ---
 
-# Pwn-Heap
+# Pwn-Heap🎩
 
 作为这个专栏的开篇，决定先写一写，`pwn`里面，高版本下`libc`的特性以及可能存在的漏洞利用(站在从前师傅的肩膀上)。之前遇到的一个题目印象实在是太深了，在里面碰到了这样的问题，能在开篇里把这个问题梳理好学习好，也是件很有成就感的事情吧
 
