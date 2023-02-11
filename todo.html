@@ -1,0 +1,24 @@
+---
+layout: default
+title: T0_D0
+permalink: /dopant/index.html
+var: dopant
+---
+<h2 class="post-list-heading">{{ page.title | default: "T0_D0" }}</h2>
+<ul class="post-list">
+    {% for chap in site.Todo%}
+    <li>
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <span class="post-meta">{{ chap.date | date: date_format }}</span>
+        <h3>
+            <a href="{{chap.url}}">
+                {{ chap.title }}
+            </a>
+        </h3>
+    </li>
+    {% endfor %}
+</ul>
+   
+
+    
+

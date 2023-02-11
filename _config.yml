@@ -67,8 +67,14 @@ collections:
     name: x1a0_h0n9
     output: true
     sort_by: chap
-    url: /xiaohong
+    url: /xiaohong/
     description: "Diary"
+  Todo:
+    name: T0_D0
+    output: true 
+    cort_by: chap
+    url: /dopant/
+    description: "To-Do list"  
 comments :
   gitalk :
     clientID : xxx

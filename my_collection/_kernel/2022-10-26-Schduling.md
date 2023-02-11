@@ -41,12 +41,26 @@ chap: Scheduling
 调度的目标：
 
 - CPU使用率
+
+  CPU非空闲利用率
+
 - 提高吞吐量
-- 减少轮询时间
+
+  每个实践单元内完成的进程
+
+- 减少周转时间
+
+  从进程创立到进程完成的时间
+
 - 减少等待时间
+
 - 减少响应时间
 
+  从进程创立到进程第一次产生响应的时间
+
 常见的调度算法：
+
+`average waiting time and average turnaround time`
 
 - First come, First Served
 
