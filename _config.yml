@@ -69,7 +69,7 @@ collections:
     sort_by: chap
     url: /xiaohong/
     description: "Diary"
-  Todo:
+  dopant:
     name: T0_D0
     output: true 
     cort_by: chap
