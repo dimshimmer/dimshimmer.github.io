@@ -75,6 +75,12 @@ collections:
     cort_by: chap
     url: /dopant/
     description: "To-Do list"  
+  gpt:
+    name: 9pt
+    output: true 
+    cort_by: chap
+    url: /gpt/
+    description: "Gpt learning"  
 comments :
   gitalk :
     clientID : xxx
