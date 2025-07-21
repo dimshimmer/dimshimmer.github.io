@@ -16,7 +16,19 @@ Formulaically, all the reinforcement learning can be seen as a MDP. The solution
 
 # Markov Decision Process
 
-Formally, a MDP is a 4-tuple ($S,A,P_a, R_a$)[^1], where:
-- 
+Formally, a MDP is a 4-tuple ($S,A,P_a, R_a$), where:
+
+- $S$: the state space. 
+- $A$: the action space ($A_s$ is the set of available actions from state $s$)
+- $P_a(s,s')$: the paobability that action $a$ in state $s$ at time $t$ will lead to state $s'$ at time $t+1$. Generally:$Pr(s_{t+1}\in S' | s_t = s, a_t=a) = \int _{S'} P_a(s,s')ds'$, for every $S'\sube S$. 
+- $R_a(s,s')$: immediate reward received after transitioning from state $s$ to state $s'$. 
+
+Usually, the optimization objective of MDP is to find a good policy for the decision maker. Thus, there exsists a policy function $\pi$, a (potentially probabilistic) mapping from $S$ to $A$. Combined with the MDP, the policy fixes the resulting combination behaves. The objective is to choose a policy $\pi$, maximizes some cumulative function of the random rewards:
+
+$$
+E_{a_t \sim \pi (s_t), s_{t+1} \sim P_{a_t}(s_t,s_{t+1})}\big[\sum ^{\infty} _{t=0} \gamma^t R_{a_t}(s_t,s_{t+1}) \big],
+$$
+
+where $\gamma$ is the discount factor satisfying  $0\leq \gamma  \leq \ 1$, which is usually close to 1 (for example,  $\gamma =1/(1+r)$ for some discount rate $r$). A lower discount factor motivates the decision maker to favor taking actions early, rather than postpone them indefinitely[^1].
 
 [^1]: [wiki/Markov_decision_process](https://en.wikipedia.org/wiki/Markov_decision_process).
