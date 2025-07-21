@@ -1,5 +1,5 @@
 # About
-This is the note and inspiration of a dummy head [Sanchez](https://github.com/dimshimmer).
+This is the note and inspiration of a silly head [d1m](https://github.com/dimshimmer).
 
 ::github{repo="dimshimmer/dimshimmer"}
 
