@@ -42,7 +42,7 @@ where $\gamma$ is the discount factor satisfying  $0\leq \gamma  \leq \ 1$, whic
 
 The algorithms to calculate optimal policies for finite state and sction MDPs requires storage for two arrays indexed by state: value $V$ and policy $\pi$. At the end of the algorithm, $\pi$ will contain the solution and $V(s)$ will contain the discounted sum of the rewards to be earned by following that solution from state $s$.
 
-To simplify the represatation, we introduce some new definition and notation to help understanding, even a little abuse of notation:
+To simplify the represatation, we introduce some new definition and notation to help understanding:
 
 - $R(s)$: means the expectation of the reward gained at the next time stamp under state $s$, $R(s) = E_{a \in A_s} [R_a(s,s')]$. 
 - $G_t$: **Gain**, the sum of the declined reward from a state $s_t$ in a Markov Chain. $G_t = \sum _ {i=0}^{\infty }\gamma ^i R(s_{t+1+i})$.
@@ -55,6 +55,14 @@ A Bellman equation, named after Richard E. Bellman, is a technique in dynamic pr
 The introduction of Bellman equation can make the dynamic programming available. The state value function can be written as:
 
 $V(s_t) = E[G_t|S_t=s_t]\\=E[R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}  ...   | S_t = s_t]\\=E[R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + ...)| S_t = s_t]\\=E[R_{t+1} + \gamma v(s_{t+1}) | S_t = s_t]\\=\underbrace{E[R_{t+1}|S_t = s_t]} + \underbrace{\gamma E[v(s_{t+1})|S_t = s_t]}\\ \ \ \ \  \text{current reward}\ \ \ \ \ \ \ \text{value expectation}\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{in the next time stamp}$ 
+
+## Algorithm
+The mapping description is less representative on the statistic perpective. Here, we need a little abuse of notation: $\pi(a|s),a \in A_s$ represents the probability of the action $a$. 
+
+> [!TIP]
+> The policy defines the complete action of the agent, including all the performance and probability. 
+> The policy only involves with the current state, not the time and the history information. 
+> The agent can update the policy with the time. 
 
 The algorithm has two steps: (1) value update and (2) policy update:
 
