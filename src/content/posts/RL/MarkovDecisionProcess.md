@@ -59,13 +59,13 @@ $V(s_t) = E[G_t|S_t=s_t]\\=E[R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}  ...   
 ## Algorithm
 The mapping description is less representative on the statistic perpective. Here, we need a little abuse of notation: $\pi(a|s),a \in A_s$ represents the probability of the action $a$. 
 
-> [!TIP]
-> The policy defines the complete action of the agent, including all the performance and probability. 
+:::note
+The policy defines the complete action of the agent, including all the performance and probability. 
 
-> The policy only involves with the current state, not the time and the history information. 
+The policy only involves with the current state, not the time and the history information. 
 
-> The agent can update the policy with the time. 
-
+The agent can update the policy with the time. 
+:::
 Under certain policy $\pi$, 
 
 The algorithm has two steps: (1) value update and (2) policy update:
