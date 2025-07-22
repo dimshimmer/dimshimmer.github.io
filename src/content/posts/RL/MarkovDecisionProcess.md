@@ -61,8 +61,12 @@ The mapping description is less representative on the statistic perpective. Here
 
 > [!TIP]
 > The policy defines the complete action of the agent, including all the performance and probability. 
+
 > The policy only involves with the current state, not the time and the history information. 
+
 > The agent can update the policy with the time. 
+
+Under certain policy $\pi$, 
 
 The algorithm has two steps: (1) value update and (2) policy update:
 
