@@ -1,4 +1,4 @@
-(---
+---
 title: Markov Decision Process
 published: 2025-07-21
 tags: [Machine Learning, Statistics, AI]
