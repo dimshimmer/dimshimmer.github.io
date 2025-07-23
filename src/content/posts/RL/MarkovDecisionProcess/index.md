@@ -1,4 +1,4 @@
----
+(---
 title: Markov Decision Process
 published: 2025-07-21
 tags: [Machine Learning, Statistics, AI]
@@ -11,6 +11,7 @@ Markov Decision Process (MDP) almost defines the standard format of the reinforc
 # Definition of Reinforcement Learning
 
 The direct neural network training process, always feeds the data to the model directly. The target is to improve its perceptibility (like CNN) instead of the decision-making capability. The Reinforcement Learning (RL) showed up to make the agent learn from the feedback from the enviroment. With the reward from the enviroment, the dicision made by the agent can gradually meet the human's expectation. In machine learning area, with a trainable agent, we hope it can find the optimal strategies to the certain decision problem. 
+![The Arrangement of RL](./RL.png)
 
 Formulaically, all the reinforcement learning can be seen as a MDP. The solution to such scenario, is also the solution of the RL. 
 
@@ -54,10 +55,10 @@ A Bellman equation, named after Richard E. Bellman, is a technique in dynamic pr
 
 The introduction of Bellman equation can make the dynamic programming available. The state value function can be written as:
 
-$V(s_t) = E[G_t|S_t=s_t]\\=E[R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}  ...   | S_t = s_t]\\=E[R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + ...)| S_t = s_t]\\=E[R_{t+1} + \gamma v(s_{t+1}) | S_t = s_t]\\=\underbrace{E[R_{t+1}|S_t = s_t]} + \underbrace{\gamma E[v(s_{t+1})|S_t = s_t]}\\ \ \ \ \  \text{current reward}\ \ \ \ \ \ \ \text{value expectation}\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{in the next time stamp}$ 
+$v(s_t) = E[G_t|S_t=s_t]\\=E[R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3}  ...   | S_t = s_t]\\=E[R_{t+1} + \gamma (R_{t+2} + \gamma R_{t+3} + ...)| S_t = s_t]\\=E[R_{t+1} + \gamma v(s_{t+1}) | S_t = s_t]\\=\underbrace{E[R_{t+1}|S_t = s_t]} + \underbrace{\gamma E[v(s_{t+1})|S_t = s_t]}\\ \ \ \ \  \text{current reward}\ \ \ \ \ \ \ \text{value expectation}\\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \text{in the next time stamp}$ 
 
 ## Algorithm
-The mapping description is less representative on the statistic perpective. Here, we need a little abuse of notation: $\pi(a|s),a \in A_s$ represents the probability of the action $a$. 
+The mapping description is less representative on the statistic perpective. Here, we need a little abuse of notation: $\pi(a|s),a \in A_s$ represents the probability of the action $a$ ($\pi(s)$ can be the probability distribution of the possible action at  state $s$).
 
 :::note
 The policy defines the complete action of the agent, including all the performance and probability. 
@@ -66,15 +67,27 @@ The policy only involves with the current state, not the time and the history in
 
 The agent can update the policy with the time. 
 :::
-Under certain policy $\pi$, 
+Under certain policy $\pi$, the agent satistify the certain pattern:
+- State Transformation Probability: $P_\pi(s,s') = \sum_{a\in A_s} \pi(a|s) P_a(s,s')$
+- Reward Function: $R_\pi(s) = \sum_{a\in A_s}\pi (a|s) R_a(s,s')$
 
-The algorithm has two steps: (1) value update and (2) policy update:
+With the involvement of the policy, we can represent the value of the agent from the state or the action perspective. 
+- $v_\pi(s) = E_{a \sim \pi(s)}[G_t|S_t = s]$ 
+- $q_\pi(s,a) = E_\pi[G_t|S_t = s, A_t = a]$
+
+Still, with Bellman equation, we have :$q_\pi(s,a) = E_{s' \in S}[R_a(s,s')] + \gamma \sum_{a \in A_{s'}}E_\pi[G_t | S_t = s', A_t = a]$. 
+
+According to the Bayes theory, there exists:
+$v_\pi(s) = E_{a\sim \pi(s)} [q_\pi(s,a)] $.
+
+Solving the reinforcement learning problem means finding an optimal strategy that enables individuals to consistently gain more from interacting with the environment than any other strategy. This optimal strategy can be represented by $\pi^*$. Usually, we can find the local optimal solution compared with other policies. obviously, it's natural to find the biggest expectation of the state value function, i.e.: $\pi_* = \arg \max _\pi E_{s\in S}[v_\pi(s)]$. 
+
+With the Bellman equation, the algorithm can be solved in Bellman Optimalty Equation. It has two steps: (1) value update and (2) policy update:
 
 $$
 V(s) := \sum_{s'} P_{\pi(s)} (s,s') (R_{\pi(s)}(s,s') + \gamma V(s'))\\
 \pi(s) := \arg\max_a \big \{\sum_{s'} P_a (s,s') (R_a(s,s') + \gamma V(s'))\big\}
 $$
-
 
 [^1]: [wiki/Markov_chain](https://en.wikipedia.org/wiki/Markov_chain).
 [^2]: [wiki/Markov_decision_process](https://en.wikipedia.org/wiki/Markov_decision_process).
