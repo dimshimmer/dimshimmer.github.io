@@ -93,7 +93,10 @@ $$
 [^2]: [wiki/Markov_decision_process](https://en.wikipedia.org/wiki/Markov_decision_process).
 [^3]: [wiki/Bellman_equation](https://en.wikipedia.org/wiki/Bellman_equation).
 
-<!-- ## Example
+## Example
 An example of MDP is the Pole-Balancing model, which comes from classic control theory. 
-Under such example, there are:
-- $S = (\theta,\dot \theta, x,\dot x) \sub \Bbb R^4$ given by pole angle, angular velocity, position of the cart and its speed. -->
+Under such example:
+<!-- - $S = (\theta,\dot \theta, x,\dot x) \sub \Bbb R^4$ given by pole angle, angular velocity, position of the cart and its speed. -->
+
+<!-- ![](./MDPExample.png) -->
+![](./MDPExample.png)
