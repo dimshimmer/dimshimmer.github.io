@@ -46,7 +46,7 @@ The algorithms to calculate optimal policies for finite state and sction MDPs re
 To simplify the represatation, we introduce some new definition and notation to help understanding:
 
 - $R(s)$: means the expectation of the reward gained at the next time stamp under state $s$, $R(s) = E_{a \in A_s} [R_a(s,s')]$. 
-- $G_t$: **Gain**, the sum of the declined reward from a state $s_t$ in a Markov Chain. $G_t = \sum _ {i=0}^{\infty }\gamma ^i R(s_{t+1+i})$.
+- $G_t$: **Return**, the sum of the declined reward from a state $s_t$ in a Markov Chain. $G_t = \sum _ {i=0}^{\infty }\gamma ^i R(s_{t+1+i})$.
 
 Usually, the state indexed value function $V(s)$ is called the state value fcuntion, it's the expectation of the gain from the certain state $s$ in a Markov Chain, $V(s) = E[G_t|S_t = s]$
 
