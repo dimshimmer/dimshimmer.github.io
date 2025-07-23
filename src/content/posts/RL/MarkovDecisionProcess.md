@@ -11,7 +11,7 @@ Markov Decision Process (MDP) almost defines the standard format of the reinforc
 # Definition of Reinforcement Learning
 
 The direct neural network training process, always feeds the data to the model directly. The target is to improve its perceptibility (like CNN) instead of the decision-making capability. The Reinforcement Learning (RL) showed up to make the agent learn from the feedback from the enviroment. With the reward from the enviroment, the dicision made by the agent can gradually meet the human's expectation. In machine learning area, with a trainable agent, we hope it can find the optimal strategies to the certain decision problem. 
-![The Arrangement of RL](./RL.png)
+![](./RL.png)
 
 Formulaically, all the reinforcement learning can be seen as a MDP. The solution to such scenario, is also the solution of the RL. 
 
