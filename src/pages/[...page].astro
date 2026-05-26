@@ -1,9 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
+import HomeProfile from "../components/HomeProfile.astro";
 import Pagination from "../components/control/Pagination.astro";
 import PostPage from "../components/PostPage.astro";
 import { PAGE_SIZE } from "../constants/constants";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
+import ProfileLayout from "../layouts/ProfileLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -15,9 +17,16 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 
 const len = page.data.length;
+const isHomePage = page.currentPage === 1;
 ---
 
-<MainGridLayout>
-    <PostPage page={page}></PostPage>
-    <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
-</MainGridLayout>
+{isHomePage ? (
+	<ProfileLayout title="郑昊伦" description="Haolun Zheng, Ph.D. student at Zhejiang University.">
+		<HomeProfile />
+	</ProfileLayout>
+) : (
+	<MainGridLayout>
+		<PostPage page={page}></PostPage>
+		<Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${len * 50}ms)`}></Pagination>
+	</MainGridLayout>
+)}
