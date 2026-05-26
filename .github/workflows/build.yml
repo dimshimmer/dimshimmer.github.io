@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
       - name: Enable pnpm
         run: corepack prepare pnpm@9.14.4 --activate
@@ -45,7 +44,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
       - name: Enable pnpm
         run: corepack prepare pnpm@9.14.4 --activate
